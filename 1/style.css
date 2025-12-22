@@ -1,0 +1,14 @@
+#number1 {
+    background-color: rebeccapurple;
+}
+
+#number2 {
+    background-color: green;
+}
+
+#add {
+    background-color: white;
+    border: solid 1px;
+    border-radius: 4px;
+    border-color: black;
+}

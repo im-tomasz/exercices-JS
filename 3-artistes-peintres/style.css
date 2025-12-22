@@ -1,0 +1,50 @@
+body {
+    min-width: 576px !important;
+} 
+ 
+ body {background-color:  #411900} 
+
+.fond-principal {
+    background:  #411900!important;
+    color: white !important;
+}
+
+.fond-nav {
+    background-color:  #331604 !important;
+    color: white !important;
+}
+
+.fond-secondaire {
+    background-color: rgb(129, 209, 182) !important;
+    color: white !important;
+}
+
+.fond-tertiaire {
+    background-color: azure !important;
+    color: rgb(178, 202, 223) !important;
+}
+
+.texte-blanc {
+    color: white !important;
+}
+
+#sommaire2{
+    display: none !important;
+}
+
+@media screen and (max-width: 992px) {
+    #sommaire {
+        display: none;
+    }
+     #sommaire2 {
+        display: block !important;
+    }
+    h2, #titre {
+        text-align: center !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .nav-item {
+        border-style: none !important;
+    }
+}
