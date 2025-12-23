@@ -98,5 +98,3 @@ export class Employe {
         console.log(enfants)
     }
 }
-
-// laissez la tranquille bises
