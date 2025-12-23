@@ -1,6 +1,7 @@
 import {Employe} from "./Employe.js"
 import {Agence} from "./Agence.js"
 import {Enfant} from "./Enfants.js"
+import {Directeur} from "./Directeur.js"
 
 
 
@@ -11,10 +12,15 @@ let agence2 = new Agence ("DelcoAmiens", "6 PLACE ALGHERO", 80080, "Amiens", fal
 let enfant1 = new Enfant ("Diego", 12)
 let enfant2 = new Enfant ("Emilien", 8)
 let enfant3 = new Enfant ("Chloé", 17)
-let enfant4 = new Enfant ("Lou", 14)
+let enfant4 = new Enfant ("Lou", 17)
+let enfant5 = new Enfant ("Galadrielle", 25)
+let enfant6 = new Enfant ("L'anneau", 3000)
 
 const enfantsPEUPLU = [enfant1, enfant3]
 const enfantsJAVELLE = [enfant2, enfant4]
+const enfantsSAURON = [enfant5, enfant6]
+
+let directeur1 = new Directeur ("Halbrand", "SAURON", "2012", 45000, 0, enfantsSAURON)
 
 let bart = new Employe ("ABBAT", "Bart", 2025, "Comptable", 20000, "Gestion", 0, agence1)
 let gerard = new Employe ("MANSOIFFE", "Gerard", 2019, "Designer", 19000, "Open Space", 0, agence1)
@@ -63,36 +69,34 @@ let sortedEmployeService = employes.toSorted((a, b) => {
         }
         }
 });
-console.log(sortedEmployeService)
+console.log(sortedEmployeService);
 
 //4.D CALCUL COUT SALARIAL
-let coutTotal = 0
+let coutTotal = 0;
+employes.forEach((employe) => coutTotal += employe.calculMasseSalariale());
+console.log(`La masse salariale sera d'un montant de ${(coutTotal)} €`);
 
-function calculMasse {
-    employes.forEach((employe) => coutTotal += employe.calculMasseSalariale()
-}
-console.log(`La masse salariale sera d'un montant de ${(coutTotal)} €`)
-
+// 4.D.2 CALCUL COUT SALARIAL REDUCE
 let coutTotalReduce = employes.reduce((accumulator, employe) => {
-    return accumulator + employe.calculMasseSalariale()
+    return accumulator + employe.calculMasseSalariale();
 }, 0)
-console.log(`La masse salariale (calcul avec la méthode "reduce") sera d'un montant de ${(coutTotalReduce)} €`)
+console.log(`La masse salariale (calcul avec la méthode "reduce") sera d'un montant de ${(coutTotalReduce)} €`);
 
 
 //6. RESTAURATION
-employes.forEach((employe) => employe.restauration() )
+employes.forEach((employe) => employe.restauration() );
 
 //7. CHEQUES VACANCES
-employes.forEach((employe) => employe.chequesVacances())
-
-
-console.log(enfantsJAVELLE)
-
-aude.chequesEnfants()
+employes.forEach((employe) => employe.chequesVacances());
 
 
 
+// aude.chequesEnfants();
+// jean.chequesEnfants();
+// eva.chequesEnfants();
 
-// jean.enfant.forEach(() => {
-//     console.log(this.age)
-// })
+employes.forEach(employe=> employe.chequesEnfants())
+
+
+directeur1.calculAnciennete()
+directeur1.calculPrimesVirements()

@@ -73,28 +73,34 @@ export class Employe {
         let cheque50 = 0;
         let cheque30 = 0;
         let cheque20 = 0;
-        for (i=0; i<this.enfant.length; i++) {
-            if (this.enfant[i].age>18){
-                console.log(`${this.enfant[i].prenom} âge supérieur à 18. Pas de chèque.`);
+        let i = 0
+        console.log(`Calcul pour enfants ${this.nom}`)
+        if (this.enfants===undefined) {
+            console.log(`${this.nom} ${this.prenom}, aucun enfant déclaré.`);
+            return;
+        }
+        for (i=0; i<this.enfants.length; i++) {
+            if (this.enfants[i].age>18){
+                console.log(`[${this.nom}] ${this.enfants[i].prenom} âge supérieur à 18 a. Pas de chèque.`);
             }
-            else if (this.enfant[i].age>=16) {
-                console.log(`${this.enfant[i].prenom} âge entre 16 et 18 ans. + 1 Chèque de 50 €.`);
+            else if (this.enfants[i].age>=16) {
+                console.log(`[${this.nom}] ${this.enfants[i].prenom} âge entre 16 et 18 ans. + 1 Chèque de 50 €.`);
                 cheque50++;
             }
-            else if (this.enfant[i].age>=11) {
-                console.log(`${this.enfant[i].prenom} âge entre 11 et 15 ans. + 1 Chèque de 30 €.`);
+            else if (this.enfants[i].age>=11) {
+                console.log(`[${this.nom}] ${this.enfants[i].prenom} âge entre 11 et 15 ans. + 1 Chèque de 30 €.`);
                 cheque30++;
             }
             else {
-                console.log(`${this.enfant[i].prenom} âge inférieur à 10 ans. + 1 chèque de 20 €.`);
+                console.log(`[${this.nom}] ${this.enfants[i].prenom} âge inférieur à 10 ans. + 1 chèque de 20 €.`);
                 cheque20++;
             }
-            console.log(`${cheque50} chèques de 50 € / ${cheque30} cheque de 30 € /`)
+            
         }
+        console.log(`[${this.nom}] ${cheque50} chèque de 50 € / ${cheque30} chèque de 30 € / ${cheque20} chèque de 20€`);
+        let enfants= this.enfants.length;
 
-        let enfants= this.enfant.length
-
-        console.log(this.enfant[0].age, this.enfant[1].age)
-        console.log(enfants)
+        console.log(`[${this.nom}] âges :  ${this.enfants[0].age} et ${this.enfants[1].age}`);
+        console.log(`[${this.nom}] nombre d'enfants : ${enfants}`);
     }
 }
